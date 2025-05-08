@@ -35,6 +35,8 @@ It should serve as a reference for all contributors, and be useful especially to
   - [It's OK to Push Back](#its-ok-to-push-back)
   - [Common Sense and Courtesy](#common-sense-and-courtesy)
   - [Trivial Edits](#trivial-edits)
+  - [Large or Automatic Edits](#large-or-automatic-edits)
+  - [Fixing Linter Issues](#fixing-linter-issues)
 - [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
   - [More About `Ok-To-Test`](#more-about-ok-to-test)
 
@@ -590,7 +592,31 @@ at once to that file.
 * Can the file be improved further?
 * Does the trivial edit greatly improve the quality of the content?
 
-## Fixing linter issues
+## Large or Automatic Edits
+
+Some tools make it very easy to create large Pull Requests, for example:
+- global search/replace
+- linters which automatically correct issues (see also next section)
+- large language models (LLMs) which generate code or documentation
+
+To make it easier for reviewers to handle such Pull Requests, please explain
+how it was generated in the "Special notes for your reviewer" section of the
+Pull Request description. Reviewers may then be able to reproduce those steps
+(search/replace, linters) or can start the review with the right expectations
+(LLMs).
+
+Even with such tools it is still your responsibility as submitter of a Pull
+Request to ensure that the change is correct (to the best of your knowledge),
+and that making the change improves the project enough to justify the cost that
+is needed to review and merge the Pull Request (see previous section). If
+unsure, add a "RFC: " (request for comments) or "WIP: " (work in progress) prefix
+to the subject of the Pull Request and ask for guidance.
+
+Please understand that reviewers may decide to close a Pull Request with a
+reference to this documentation if they come to the conclusion that the Pull
+Request is not worth the effort.
+
+## Fixing Linter Issues
 
 Kubernetes has a set of linter checks. Some of those must pass in the entire
 code base, some must pass in new or modified code, and some are merely hints
